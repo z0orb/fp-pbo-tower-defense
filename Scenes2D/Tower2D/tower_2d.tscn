@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://brnixteaewauc"]
+
+[ext_resource type="Script" uid="uid://wtnhouavt0jk" path="res://Scenes2D/Tower2D/Tower2D.cs" id="1_gn2ca"]
+[ext_resource type="Texture2D" uid="uid://ctoajyp04adi0" path="res://Textures/turretPlatform.png" id="1_wkovt"]
+[ext_resource type="Texture2D" uid="uid://b65opyn8410tn" path="res://Textures/greenMG.png" id="2_gn2ca"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkovt"]
+radius = 250.0
+
+[node name="Tower2D" type="Node2D" node_paths=PackedStringArray("rangeArea")]
+script = ExtResource("1_gn2ca")
+rangeArea = NodePath("RangeArea2D")
+
+[node name="TowerSocketSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("1_wkovt")
+
+[node name="TowerSprite" type="Sprite2D" parent="."]
+position = Vector2(7, -22)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("2_gn2ca")
+
+[node name="RangeArea2D" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea2D"]
+shape = SubResource("CircleShape2D_wkovt")
+debug_color = Color(0.760784, 0.741176, 0.0823529, 0.419608)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://mgp415ctlefd"]
+[gd_scene load_steps=5 format=3 uid="uid://mgp415ctlefd"]
 
 [ext_resource type="Script" uid="uid://duo4xmwtn6yps" path="res://Scenes2D/World2D/World2D.cs" id="1_b7te6"]
 [ext_resource type="PackedScene" uid="uid://c6nm4fugc3pma" path="res://Scenes2D/Enemy2D/enemy_2d.tscn" id="1_sd5gt"]
 [ext_resource type="Script" uid="uid://uj1oe40ca2vr" path="res://Scenes2D/World2D/DebugButton01.cs" id="3_uvb0k"]
+[ext_resource type="PackedScene" uid="uid://brnixteaewauc" path="res://Scenes2D/Tower2D/tower_2d.tscn" id="4_rteno"]
 
 [node name="World2D" type="Node2D" node_paths=PackedStringArray("firstEnemy", "secondEnemy", "thirdEnemy")]
 script = ExtResource("1_b7te6")
@@ -13,14 +14,15 @@ thirdEnemy = NodePath("Enemy2D3")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Enemy2D" parent="." instance=ExtResource("1_sd5gt")]
+position = Vector2(247, -142)
 maxHealth = 10
 
 [node name="Enemy2D2" parent="." instance=ExtResource("1_sd5gt")]
-position = Vector2(-155, -69)
+position = Vector2(132, -10)
 maxHealth = 20
 
 [node name="Enemy2D3" parent="." instance=ExtResource("1_sd5gt")]
-position = Vector2(135, -66)
+position = Vector2(259, 112)
 maxHealth = 40
 
 [node name="DebugButton01" type="Button" parent="." node_paths=PackedStringArray("enemy")]
@@ -31,3 +33,6 @@ offset_bottom = 287.0
 text = "Damage An Enemy"
 script = ExtResource("3_uvb0k")
 enemy = NodePath("../Enemy2D3")
+
+[node name="Tower2D" parent="." instance=ExtResource("4_rteno")]
+position = Vector2(-311, 46)

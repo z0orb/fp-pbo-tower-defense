@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6nm4fugc3pma"]
+[gd_scene load_steps=4 format=3 uid="uid://c6nm4fugc3pma"]
 
 [ext_resource type="Script" uid="uid://bsx3rowtvdge3" path="res://Scenes2D/Enemy2D/Enemy2D.cs" id="1_q1wx3"]
 [ext_resource type="Texture2D" uid="uid://bm7pfy0u7p7kr" path="res://Textures/Enemy.svg" id="1_t86jf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1wx3"]
+radius = 19.0
 
 [node name="Enemy2D" type="Node2D" node_paths=PackedStringArray("nameLabel", "healthLabel")]
 script = ExtResource("1_q1wx3")
@@ -27,3 +30,11 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "<enemy_health>"
 horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_q1wx3")
+debug_color = Color(0.73873, 0, 0.0580931, 0.42)

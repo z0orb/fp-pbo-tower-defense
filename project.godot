@@ -24,3 +24,7 @@ folder_colors={
 "res://Scenes2D/": "blue",
 "res://Textures/": "red"
 }
+
+[layer_names]
+
+2d_physics/layer_1="Enemies"

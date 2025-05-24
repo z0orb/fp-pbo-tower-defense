@@ -16,6 +16,19 @@ public partial class Enemy2D : Node2D
         CheckHealthAndUpdateLabel();
     }
 
+    public override void _PhysicsProcess(double delta)
+    {
+        Move(delta);
+    }
+
+    public void Move(double delta)
+    {
+        float new_X = Position.X - (float)delta * 120.0f;
+        Position = new Vector2(new_X, Position.Y);
+    }
+
+
+
     public void RenameEnemy(string arg_name)
     {
         nameLabel.Text = arg_name;
