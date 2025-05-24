@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://mgp415ctlefd"]
+[gd_scene load_steps=3 format=3 uid="uid://mgp415ctlefd"]
 
+[ext_resource type="Script" uid="uid://duo4xmwtn6yps" path="res://Scenes2D/World2D/World2D.cs" id="1_b7te6"]
 [ext_resource type="PackedScene" uid="uid://c6nm4fugc3pma" path="res://Scenes2D/Enemy2D/enemy_2d.tscn" id="1_sd5gt"]
 
-[node name="World2D" type="Node2D"]
+[node name="World2D" type="Node2D" node_paths=PackedStringArray("firstEnemy", "secondEnemy", "thirdEnemy")]
+script = ExtResource("1_b7te6")
+firstEnemy = NodePath("Enemy2D")
+secondEnemy = NodePath("Enemy2D2")
+thirdEnemy = NodePath("Enemy2D3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Enemy2D" parent="." instance=ExtResource("1_sd5gt")]
+
+[node name="Enemy2D2" parent="." instance=ExtResource("1_sd5gt")]
+position = Vector2(-155, -69)
+
+[node name="Enemy2D3" parent="." instance=ExtResource("1_sd5gt")]
+position = Vector2(135, -66)

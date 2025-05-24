@@ -6,12 +6,12 @@ public partial class Enemy2D : Node2D
     [Export] public Label nameLabel;
     [Export] public Label healthLabel;
 
-    [Export] public int maxHealth;
-    public int currentHealth;
+    public int maxHealth = 10;
+    public int currentHealth = 10;
 
     public override void _Ready()
     {
-        InitializeEnemyHealth(maxHealth);
+        RenameEnemy("Ruby");
         UpdateHealthLabel();
     }
 
@@ -23,32 +23,5 @@ public partial class Enemy2D : Node2D
     public void UpdateHealthLabel()
     {
         healthLabel.Text = $"{currentHealth}/{maxHealth}";
-        CheckHealthAndUpdateLabel();
-    }
-
-    public void InitializeEnemyHealth(int arg_hitpoints)
-    {
-        maxHealth = arg_hitpoints;
-        currentHealth = maxHealth;
-        UpdateHealthLabel();
-    }
-
-    public void CheckHealthAndUpdateLabel()
-    {
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            UpdateHealthLabel();
-            QueueFree();
-        }
-        else
-        {
-            UpdateHealthLabel();
-        }
-    }
-
-    public void Damage(int arg_damage)
-    {
-        currentHealth -= arg_damage;
     }
 }

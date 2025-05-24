@@ -3,24 +3,26 @@
 [ext_resource type="Script" uid="uid://bsx3rowtvdge3" path="res://Scenes2D/Enemy2D/Enemy2D.cs" id="1_q1wx3"]
 [ext_resource type="Texture2D" uid="uid://bm7pfy0u7p7kr" path="res://Textures/Enemy.svg" id="1_t86jf"]
 
-[node name="Enemy2D" type="Node2D"]
+[node name="Enemy2D" type="Node2D" node_paths=PackedStringArray("nameLabel", "healthLabel")]
 script = ExtResource("1_q1wx3")
+nameLabel = NodePath("VBoxContainer/NameLabel")
+healthLabel = NodePath("VBoxContainer/HealthLabel")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_t86jf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -103.0
-offset_top = -84.0
-offset_right = 103.0
-offset_bottom = -34.0
-
-[node name="HealthLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "<enemy_health>"
-horizontal_alignment = 1
+offset_left = -151.0
+offset_top = -78.0
+offset_right = 151.0
+offset_bottom = -38.0
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "<enemy_name>"
+horizontal_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "<enemy_health>"
 horizontal_alignment = 1
