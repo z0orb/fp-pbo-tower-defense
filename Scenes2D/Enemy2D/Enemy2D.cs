@@ -13,7 +13,7 @@ public partial class Enemy2D : Node2D
     {
         InitializeHealth(maxHealth);
         RenameEnemy("Diamond");
-        CheckHealth();
+        CheckHealthAndUpdateLabel();
     }
 
     public void RenameEnemy(string arg_name)
@@ -33,11 +33,23 @@ public partial class Enemy2D : Node2D
         UpdateHealthLabel();
     }
 
-    public void CheckHealth()
+    public void CheckHealthAndUpdateLabel()
     {
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
+            UpdateHealthLabel();
             QueueFree();
         }
+        else
+        {
+            UpdateHealthLabel();
+        }
+    }
+
+    public void Damage(int arg_damage)
+    {
+        currentHealth -= arg_damage;
+        CheckHealthAndUpdateLabel();
     }
 }
