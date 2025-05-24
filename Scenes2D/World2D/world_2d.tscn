@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mgp415ctlefd"]
+
+[ext_resource type="PackedScene" uid="uid://c6nm4fugc3pma" path="res://Scenes2D/Enemy2D/enemy_2d.tscn" id="1_sd5gt"]
+
+[node name="World2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Enemy2D" parent="." instance=ExtResource("1_sd5gt")]

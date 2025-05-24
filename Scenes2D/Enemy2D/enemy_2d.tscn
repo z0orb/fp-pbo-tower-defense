@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6nm4fugc3pma"]
+[gd_scene load_steps=3 format=3 uid="uid://c6nm4fugc3pma"]
 
+[ext_resource type="Script" uid="uid://bsx3rowtvdge3" path="res://Scenes2D/Enemy2D/Enemy2D.cs" id="1_q1wx3"]
 [ext_resource type="Texture2D" uid="uid://bm7pfy0u7p7kr" path="res://Textures/Enemy.svg" id="1_t86jf"]
 
 [node name="Enemy2D" type="Node2D"]
+script = ExtResource("1_q1wx3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_t86jf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -103.0
+offset_top = -84.0
+offset_right = 103.0
+offset_bottom = -34.0
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "<enemy_health>"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "<enemy_name>"
+horizontal_alignment = 1
