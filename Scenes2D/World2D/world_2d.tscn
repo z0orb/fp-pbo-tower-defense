@@ -12,9 +12,12 @@ thirdEnemy = NodePath("Enemy2D3")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Enemy2D" parent="." instance=ExtResource("1_sd5gt")]
+maxHealth = 10
 
 [node name="Enemy2D2" parent="." instance=ExtResource("1_sd5gt")]
 position = Vector2(-155, -69)
+maxHealth = 20
 
 [node name="Enemy2D3" parent="." instance=ExtResource("1_sd5gt")]
 position = Vector2(135, -66)
+maxHealth = 40

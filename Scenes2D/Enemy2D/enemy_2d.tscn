@@ -7,6 +7,7 @@
 script = ExtResource("1_q1wx3")
 nameLabel = NodePath("VBoxContainer/NameLabel")
 healthLabel = NodePath("VBoxContainer/HealthLabel")
+maxHealth = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_t86jf")
