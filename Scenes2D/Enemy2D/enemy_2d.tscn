@@ -7,27 +7,32 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1wx3"]
 radius = 19.0
 
-[node name="Enemy2D" type="Node2D" node_paths=PackedStringArray("nameLabel", "healthLabel")]
+[node name="Enemy2D" type="PathFollow2D" node_paths=PackedStringArray("nameLabel", "healthLabel")]
+rotates = false
+loop = false
 script = ExtResource("1_q1wx3")
-nameLabel = NodePath("VBoxContainer/NameLabel")
-healthLabel = NodePath("VBoxContainer/HealthLabel")
+nameLabel = NodePath("PanelContainer/VBoxContainer/NameLabel")
+healthLabel = NodePath("PanelContainer/VBoxContainer/HealthLabel")
 maxHealth = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_t86jf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -151.0
-offset_top = -78.0
-offset_right = 151.0
-offset_bottom = -38.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -85.0
+offset_top = -83.0
+offset_right = 85.0
+offset_bottom = -33.0
 
-[node name="NameLabel" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "<enemy_name>"
 horizontal_alignment = 1
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer"]
+[node name="HealthLabel" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "<enemy_health>"
 horizontal_alignment = 1

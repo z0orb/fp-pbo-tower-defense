@@ -2,12 +2,15 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public partial class Enemy2D : Node2D
+public partial class Enemy2D : PathFollow2D
 {
+    [ExportCategory("Node Connections")]
     [Export] public Label nameLabel;
     [Export] public Label healthLabel;
 
+    [ExportCategory("EnemyStats")]
     [Export] public int maxHealth = 10;
+    [Export] public float movementSpeed = 120.0f;
     public int currentHealth;
 
     public override void _Ready()
@@ -19,13 +22,17 @@ public partial class Enemy2D : Node2D
 
     public override void _PhysicsProcess(double delta)
     {
-        //Move(delta);
+        Move(delta);
     }
 
     public void Move(double delta)
     {
-        float new_X = Position.X - (float)delta * 120.0f;
-        Position = new Vector2(new_X, Position.Y);
+        Progress += (float)delta * movementSpeed;
+
+        if (ProgressRatio >= 1.0f)
+        {
+            Banish();
+        }
     }
 
 
@@ -65,5 +72,11 @@ public partial class Enemy2D : Node2D
     {
         currentHealth -= arg_damage;
         CheckHealthAndUpdateLabel();
+    }
+
+    public void Banish()
+    {
+        QueueFree();
+        GD.Print($"Enemy banished: {this}");
     }
 }

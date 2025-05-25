@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1152"
+   height="648"
+   viewBox="0 0 304.79999 171.45"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="Map_01.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.76167929"
+     inkscape:cx="609.83672"
+     inkscape:cy="385.33278"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background">
+    <rect
+       style="opacity:1;fill:#642c2c;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3"
+       width="304.79999"
+       height="171.45"
+       x="3.6035156e-06"
+       y="1.1962887e-07" />
+  </g>
+  <g
+     inkscape:label="Path"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;stroke-linecap:square;stroke:#000000;stroke-opacity:1;stroke-width:0.79374999;stroke-dasharray:none"
+       d="M 212.74219,43.919922 V 109.57227 H 91.552734 V 44.962891 h -104.751953 -9.921875 v 19.84375 h 9.921875 84.908203 V 129.41602 H 232.58594 V 63.763672 h 84.9082 9.92188 v -19.84375 h -9.92188 z"
+       id="path2" />
+    <path
+       style="display:none;opacity:1;fill:none;stroke:#ff00aa;stroke-width:0.264583;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+       d="M -13.2,54.884211 H 81.631577 V 119.49474 H 222.66315 V 53.842104 h 94.83158"
+       id="path1"
+       inkscape:label="DebugPath" />
+  </g>
+</svg>
