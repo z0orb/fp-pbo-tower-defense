@@ -7,9 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkovt"]
 radius = 250.0
 
-[node name="Tower2D" type="Node2D" node_paths=PackedStringArray("rangeArea")]
+[node name="Tower2D" type="Node2D" node_paths=PackedStringArray("rangeArea", "timer")]
 script = ExtResource("1_gn2ca")
 rangeArea = NodePath("RangeArea2D")
+timer = NodePath("Timer")
 
 [node name="TowerSocketSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.355, 0.355)
@@ -27,3 +28,7 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea2D"]
 shape = SubResource("CircleShape2D_wkovt")
 debug_color = Color(0.760784, 0.741176, 0.0823529, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

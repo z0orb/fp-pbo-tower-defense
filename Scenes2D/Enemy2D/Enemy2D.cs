@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public partial class Enemy2D : Node2D
@@ -18,7 +19,7 @@ public partial class Enemy2D : Node2D
 
     public override void _PhysicsProcess(double delta)
     {
-        Move(delta);
+        //Move(delta);
     }
 
     public void Move(double delta)

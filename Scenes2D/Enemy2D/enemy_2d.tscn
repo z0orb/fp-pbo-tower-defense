@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6nm4fugc3pma"]
+[gd_scene load_steps=5 format=3 uid="uid://c6nm4fugc3pma"]
 
 [ext_resource type="Script" uid="uid://bsx3rowtvdge3" path="res://Scenes2D/Enemy2D/Enemy2D.cs" id="1_q1wx3"]
 [ext_resource type="Texture2D" uid="uid://bm7pfy0u7p7kr" path="res://Textures/Enemy.svg" id="1_t86jf"]
+[ext_resource type="Script" uid="uid://d3sqylf7mi5dc" path="res://Scenes2D/Enemy2D/Enemy2DArea.cs" id="3_yfm2m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1wx3"]
 radius = 19.0
@@ -34,6 +35,7 @@ horizontal_alignment = 1
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 0
 monitoring = false
+script = ExtResource("3_yfm2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_q1wx3")
