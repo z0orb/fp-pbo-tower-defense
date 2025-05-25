@@ -43,8 +43,8 @@ public partial class Tower2D : Node2D
 
     public void Attack(Enemy2D enemy)
     {
-        enemy.Damage(damage);
-        timer.Start();
+        AddChild(Projectile2D.CreateProjectile(damage, enemy));
+        timer.Start(); 
     }
 
     public void OnAreaEntered(Area2D arg_area)
