@@ -2,7 +2,17 @@ using Godot;
 using Godot.Collections;
 using System;
 
+
 public partial class Enemy2D : PathFollow2D
+{
+    private static String packedScenePath = "uid://c6nm4fugc3pma";
+    public static Enemy2D CreateEnemy2D()
+    {
+        return ResourceLoader.Load<PackedScene>(packedScenePath).Instantiate<Enemy2D>();
+    }
+}
+
+public partial class Enemy2D 
 {
     [ExportCategory("Node Connections")]
     [Export] public Label nameLabel;

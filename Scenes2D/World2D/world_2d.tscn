@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://mgp415ctlefd"]
 
 [ext_resource type="Script" uid="uid://duo4xmwtn6yps" path="res://Scenes2D/World2D/World2D.cs" id="1_b7te6"]
-[ext_resource type="PackedScene" uid="uid://c6nm4fugc3pma" path="res://Scenes2D/Enemy2D/enemy_2d.tscn" id="1_sd5gt"]
 [ext_resource type="Texture2D" uid="uid://b2kiy0db0uim3" path="res://Textures/Map_01.svg" id="2_rteno"]
+[ext_resource type="Script" uid="uid://fucw1li36ih8" path="res://Scenes2D/World2D/SpawnerButton.cs" id="4_4japp"]
 [ext_resource type="PackedScene" uid="uid://brnixteaewauc" path="res://Scenes2D/Tower2D/tower_2d.tscn" id="4_rteno"]
 
 [sub_resource type="Curve2D" id="Curve2D_rteno"]
@@ -11,11 +11,9 @@ _data = {
 }
 point_count = 8
 
-[node name="World2D" type="Node2D" node_paths=PackedStringArray("firstEnemy", "secondEnemy", "thirdEnemy")]
+[node name="World2D" type="Node2D" node_paths=PackedStringArray("path2D")]
 script = ExtResource("1_b7te6")
-firstEnemy = NodePath("Path2D/Enemy2D")
-secondEnemy = NodePath("Path2D/Enemy2D2")
-thirdEnemy = NodePath("Path2D/Enemy2D3")
+path2D = NodePath("Path2D")
 
 [node name="MapTexture" type="Sprite2D" parent="."]
 texture = ExtResource("2_rteno")
@@ -23,22 +21,16 @@ texture = ExtResource("2_rteno")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_rteno")
 
-[node name="Enemy2D" parent="Path2D" instance=ExtResource("1_sd5gt")]
-position = Vector2(-595, -117)
-maxHealth = 10
-movementSpeed = 240.0
-
-[node name="Enemy2D2" parent="Path2D" instance=ExtResource("1_sd5gt")]
-position = Vector2(-595, -117)
-maxHealth = 20
-movementSpeed = 240.0
-
-[node name="Enemy2D3" parent="Path2D" instance=ExtResource("1_sd5gt")]
-position = Vector2(-595, -117)
-maxHealth = 40
-movementSpeed = 240.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Tower2D" parent="." instance=ExtResource("4_rteno")]
 position = Vector2(0, 28)
+
+[node name="SpawnerButton" type="Button" parent="." node_paths=PackedStringArray("gameworld")]
+offset_left = 325.0
+offset_top = 221.0
+offset_right = 525.0
+offset_bottom = 271.0
+text = "SPAWN "
+script = ExtResource("4_4japp")
+gameworld = NodePath("..")

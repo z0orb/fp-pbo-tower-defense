@@ -4,16 +4,15 @@ using System;
 
 public partial class World2D : Node2D
 {
-    [Export] Enemy2D firstEnemy;
-    [Export] Enemy2D secondEnemy;
-    [Export] Enemy2D thirdEnemy;
-
+    [Export] public Path2D path2D;
     public override void _Ready()
     {
-        firstEnemy.RenameEnemy("Ruby1");
-        secondEnemy.RenameEnemy("Ruby2");
-        thirdEnemy.RenameEnemy("Ruby3");
+        CreateEnemy2D();
     }
 
+    public void CreateEnemy2D()
+    {
+        path2D.AddChild(Enemy2D.CreateEnemy2D());
+    }
             
 }
