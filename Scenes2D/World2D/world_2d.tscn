@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mgp415ctlefd"]
+[gd_scene load_steps=7 format=3 uid="uid://mgp415ctlefd"]
 
 [ext_resource type="Script" uid="uid://duo4xmwtn6yps" path="res://Scenes2D/World2D/World2D.cs" id="1_b7te6"]
 [ext_resource type="Texture2D" uid="uid://b2kiy0db0uim3" path="res://Textures/Map_01.svg" id="2_rteno"]
 [ext_resource type="Script" uid="uid://fucw1li36ih8" path="res://Scenes2D/World2D/SpawnerButton.cs" id="4_4japp"]
 [ext_resource type="PackedScene" uid="uid://brnixteaewauc" path="res://Scenes2D/Tower2D/tower_2d.tscn" id="4_rteno"]
+[ext_resource type="PackedScene" uid="uid://dxbyyyxsg3gsf" path="res://Scenes2D/Spawner2D/spawner_2d.tscn" id="5_4japp"]
 
 [sub_resource type="Curve2D" id="Curve2D_rteno"]
 _data = {
@@ -34,3 +35,6 @@ offset_bottom = 271.0
 text = "SPAWN "
 script = ExtResource("4_4japp")
 gameworld = NodePath("..")
+
+[node name="Spawner2D" parent="." node_paths=PackedStringArray("path") instance=ExtResource("5_4japp")]
+path = NodePath("../Path2D")

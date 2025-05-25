@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://dxbyyyxsg3gsf"]
+[gd_scene load_steps=2 format=3 uid="uid://dxbyyyxsg3gsf"]
 
-[node name="Spawner2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://dh45xfwr78uum" path="res://Scenes2D/Spawner2D/Spawner2D.cs" id="1_a4hdr"]
+
+[node name="Spawner2D" type="Node2D" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_a4hdr")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]

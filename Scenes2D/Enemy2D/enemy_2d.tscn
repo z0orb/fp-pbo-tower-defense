@@ -19,6 +19,7 @@ maxHealth = 30
 texture = ExtResource("1_t86jf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = 5
 offset_left = -85.0
 offset_top = -83.0
 offset_right = 85.0
